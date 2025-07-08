@@ -101,6 +101,6 @@ Educational demonstration of smart contract security
 Benchmarking blockchain resilience under DDoS stress
 
 👨‍💻 Author
-Rishab Potharla
-MSc Blockchain Technology, Atlantic Technological University
-Supervisor: Gary Cullen
+Rishab Potharla,
+MSc Blockchain Technology, Atlantic Technological University,
+Supervisor: Gary Cullen.
