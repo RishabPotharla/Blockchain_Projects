@@ -1,0 +1,133 @@
+/* Define core variables for easy customization */
+:root {
+  /* Font and typography */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+  
+  /* Color variables for light mode */
+  --color-text: #03080b;
+  --color-background: #b06fed;
+  --color-primary: #646cff;
+  --color-primary-hover: #535bf2;
+  --color-button-background: #f9f9f9;
+  
+  /* Color variables for dark mode */
+  --color-text-dark: rgba(255, 255, 255, 0.87);
+  --color-background-dark: #242424;
+  --color-button-background-dark: #1a1a1a;
+  
+  /* Spacing and transition */
+  --spacing: 1rem;
+  --transition-speed: 0.25s;
+  
+  /* Global styles */
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  color-scheme: light dark;
+  
+  /* Defaulting to light mode colors */
+  color: var(--color-text);
+  background-color: var(--color-background);
+  
+  /* Performance and clarity improvements */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global link styles */
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Base layout for the body */
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: var(--spacing);
+  /* A subtle gradient background for light mode */
+  background: linear-gradient(135deg, var(--color-background), #e9eefe);
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: calc(var(--spacing) * 0.5) 0;
+}
+
+/* Button styling with animations and shadows */
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-button-background);
+}
+button:hover {
+  transform: translateY(-2px);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px solid var(--color-primary);
+}
+
+/* Container for central content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing);
+  border-radius: 12px;
+  /* Optionally, use a subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
+}
+
+/* Card component for grouping related content */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: var(--spacing);
+  margin: var(--spacing) 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow var(--transition-speed);
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--color-text-dark);
+    background-color: var(--color-background-dark);
+  }
+  body {
+    /* Adjust the background gradient for dark mode */
+    background: linear-gradient(135deg, var(--color-background-dark), #121212);
+  }
+  button {
+    background-color: var(--color-button-background-dark);
+  }
+  .card {
+    background: #333;
+  }
+}
