@@ -49,25 +49,25 @@ Refugee Identity Management System/
     ├── schema.graphql
     ├── subgraph.yaml
     └── src/mapping.ts
-
 ⚙️ Environment Setup
 
 Both DApps require a .env.local file in their respective directories.
 ⚠️ Note: These files are not uploaded for security reasons — you must create them manually.
 
 📌 NGO/Credentials .env.local
-
 VITE_PINATA_JWT=<your-pinata-jwt>
 VITE_PINATA_GATEWAY=https://gateway.pinata.cloud/ipfs
 VITE_PINATA_API_BASE=https://api.pinata.cloud
 VITE_NGO_SUBGRAPH=https://api.studio.thegraph.com/query/114823/ngo-credential/version/latest
 
 📌 refuge_Registration .env.local
-
 VITE_PINATA_JWT=<your-pinata-jwt>
 VITE_PINATA_GATEWAY=https://gateway.pinata.cloud/ipfs
 VITE_PINATA_API_BASE=https://api.pinata.cloud
 VITE_NGO_SUBGRAPH=https://api.studio.thegraph.com/query/114823/ngo-credential/version/latest
+
+
+⚠️ You must also generate your own Pinata JWT and Subgraph deploy key.
 
 🛠️ Tech Stack
 
@@ -83,13 +83,11 @@ Wallet → MetaMask
 
 📝 Run Locally
 Refugee Registration DApp
-
 cd refuge_Registration
 npm install
 npm run dev
 
 NGO Credential Issuer DApp
-
 cd NGO/Credentials
 npm install
 npm run dev
@@ -102,7 +100,6 @@ npx graph build
 npx graph deploy ngo-credential subgraph.yaml --deploy-key <YOUR_DEPLOY_KEY>
 
 🔄 Usage Flow
-
 
 Refugee uploads document → Metadata JSON created → CID stored on blockchain.
 
