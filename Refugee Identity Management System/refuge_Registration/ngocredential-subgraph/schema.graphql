@@ -1,0 +1,24 @@
+type Credential @entity(immutable: true) {
+  id: ID!            # txHash-logIndex
+  txHash: Bytes!
+  issuer: Bytes!
+  refugee: Bytes!
+  name: String!
+  age: Int!
+  gender: String!
+  credentialType: String!
+  timestamp: BigInt!
+}
+
+# these get UPDATED (counters), so immutable: false
+type DailyStat @entity(immutable: false) {
+  id: ID!            # epoch-day number as string
+  date: String!
+  count: BigInt!
+}
+
+type TypeStat @entity(immutable: false) {
+  id: ID!            # credentialType
+  credentialType: String!
+  count: BigInt!
+}

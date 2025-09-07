@@ -1,0 +1,27 @@
+specVersion: 1.0.0
+schema:
+  file: ./schema.graphql
+
+dataSources:
+  - kind: ethereum
+    name: NGOCredentialIssuer
+    network: fuji
+    source:
+      address: "0x67ce182d144199718B79101A8b289bb025E08F52"
+      abi: NGOCredentialIssuer
+      startBlock: 44627708
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Credential
+        - DailyStat
+        - TypeStat
+      abis:
+        - name: NGOCredentialIssuer
+          file: ./abis/NGOCredentialIssuer.json
+      eventHandlers:
+        - event: CredentialIssued(indexed address,indexed address,string,uint8,string,string,uint256)
+          handler: handleCredentialIssued
+      file: ./src/mapping.ts
