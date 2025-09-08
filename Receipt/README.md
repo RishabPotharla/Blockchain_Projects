@@ -66,8 +66,6 @@ You must create it locally with your own values.
 npm run dev
 ```
 
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
-
 ---
 
 ## 🛠️ Tech Stack
@@ -80,6 +78,6 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 📦 Notes
 - Requires MetaMask (or another EVM wallet) connected to Sepolia.  
-- Always use `ipfs://<cid>` for on-chain `tokenURI`. Gateways (e.g., `https://ipfs.io/ipfs/<cid>`) are fine for previews but not stored on-chain.  
+- Use `ipfs://<cid>` for on-chain `tokenURI`. Gateways (e.g., `https://ipfs.io/ipfs/<cid>`) are fine for previews but not stored on-chain.  
 - After minting, NFTs are fully transferable from MetaMask → NFT tab → Select token → Send.  
-- **Never commit your real Pinata JWT**. Use environment variables locally or in deployment.  
+ 
